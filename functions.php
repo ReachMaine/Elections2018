@@ -1,6 +1,9 @@
 <?php
 /**
 Plugin Name: EAElections
+Description: zig's election plugin.
+Author: zig, aka Linda Speight
+Version: 1.18
 */
 define( 'EAE_PLUGIN', __FILE__ );
 define( 'EAE_PLUGIN_DIR', untrailingslashit( dirname( EAE_PLUGIN ) ) );
