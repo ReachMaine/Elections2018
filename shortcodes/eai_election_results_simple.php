@@ -6,8 +6,8 @@ add_shortcode('electionresultsimple', 'electionResults_RaceSimple');
 function electionResults_RaceSimple ($atts) {
     /* short code function to display Summary of election results by Race.  Ex:  Governor's race */
     global $wpdb;
-    $table = "votes2016";
-    global $eai_elections_enable_results;
+    $table = EAElections_get_tablename();
+
     $a = shortcode_atts( array(
         'race' => '',
         'link' => '',
@@ -57,7 +57,7 @@ function electionResults_RaceSimple ($atts) {
     $pct_unreported_u = 0;
     $jsreturn = "";
     $towns_reporting = []; // empty array.
-    if ($eai_elections_enable_results) {
+    if (EAElections_enabled()) {
      /* get the candidates in the race */
       $candquery = 'SELECT  distinct `candidate`, party, raceorder FROM `'. $table.'` WHERE race="'. $race.'"';
       //echo "<p>Canidate Query: ".$candquery."</p>";

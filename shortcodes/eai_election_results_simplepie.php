@@ -7,7 +7,6 @@ function electionResults_RaceSimplePie ($atts) {
  global $wpdb;
  $table = EAElections_get_tablename();
 
- global $eai_elections_enable_results ; // turn on/off everything
   $a = shortcode_atts( array(
      'race' => '',
      'unvoted' => false,  // by default, dont show the unvoted
@@ -18,12 +17,12 @@ function electionResults_RaceSimplePie ($atts) {
      'link' => '',
      'novoteimg' => '',
  ), $atts );
-$link = $a['link'];
+ $link = $a['link'];
  $votes_preview = false;
  $htmlreturn = "<!-- Simple Pie shortcode -->";
  $htmlreturn .= "Simple Pie with table: ".$table.".";
  $jsreturn = "";
- if ($eai_elections_enable_results) {
+ if (EAElections_enabled()) {
    // initializations
    $primary = $a['primary'];
    $race = $a['race'];

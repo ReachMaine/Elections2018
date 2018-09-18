@@ -6,8 +6,8 @@ add_shortcode('electionresultsrace2', 'electionResults_Race2');
 function electionResults_Race2($atts) {
     /* short code function to display election results by Race.  Ex:  Governor's race */
   global $wpdb;
-  $table = "votes2016";
-  global $eai_elections_enable_results; // turn on/off everything
+  $table = EAElections_get_tablename();
+
    $a = shortcode_atts( array(
       'race' => '',
       'unvoted' => false,  // by default, dont show the unvoted
@@ -20,7 +20,7 @@ function electionResults_Race2($atts) {
   $votes_preview = false;
   $htmlreturn = "<!-- Race Shortcode -->";
   $jsreturn = "";
-  if ($eai_elections_enable_results) {
+  if (EAElections_enabled()) {
     // initializations
     $primary = $a['primary'];
     $race = $a['race'];

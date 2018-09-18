@@ -22,13 +22,29 @@ function eae_header_scripts(){
   <?php
 }
 
-include_once(EAE_PLUGIN_DIR.'/eai_election_results.php');
+/* election results short codes */
 
+/* shortcode [electionresultsrace ] */
+require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_result_racebars.php');
+
+/* shortcode [electionresultspie] */
+require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_results_simplepie.php');
+
+/* shortcode [electionresultsimple ] - best for uncontested races */
+require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_results_simple.php');
+
+/* shortcode [electionresultstown ] */
+require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_results_town.php');
+
+/**** functions *****/
+function EAElections_enabled() {
+  $eai_elections_enable_results = true;
+  return $eai_elections_enable_results;
+}
 function EAElections_get_tablename() {
   return "votes2018";
 }
 
 function EAElections_get_checkback_img() {
   return EAE_PLUGIN_URL.'/images/election_announcement_bar_tuesday.jpg';
-  //return "//www.downeastmaine.com/elections2018/wp-content/uploads/sites/25/2018/09/election_announcement_bar_tuesday_2018.jpg";
 }

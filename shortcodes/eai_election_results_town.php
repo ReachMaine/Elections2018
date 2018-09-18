@@ -5,8 +5,8 @@ add_shortcode('electionresultstown', 'electionResults_Town');
 function electionResults_Town ($atts) {
 /* shortcode to return all the results for a particular town */
     global $wpdb;
-    $table = "votes2016";
-    global $eai_elections_enable_results;
+    $table = EAElections_get_tablename();
+
     $votes_preview = false;
 	  $a = shortcode_atts( array(
         'town' => 'something',
@@ -17,7 +17,7 @@ function electionResults_Town ($atts) {
     $towns_not_reported = []; // empty array
     $htmlreturn = "<!-- Town Results shortcode -->";
     $unofficial_text = 'Voting from Hancock County ONLY.';
-    if ($eai_elections_enable_results) {
+    if (EAElections_enabled()) {
         /* initializations */
         $htmlreturn .= '<div class="eai-results-wrapper"><div class="eai-town"><h4>Elections results for '.$town.".</h4>";
         $htmlreturn .= '<h6 class="eai-results-unofficial">'.$unofficial_text.'</h6>';

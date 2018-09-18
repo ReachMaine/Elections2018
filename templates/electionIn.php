@@ -5,13 +5,13 @@ Template name: Election Vote Input
 $have_town = false;
 $updated = false;
 global $wpdb;
-$table = "elections2016"; 
+$table = EAElections_get_tablename();
 
 if ( 'GET' == $_SERVER['REQUEST_METHOD'] && !empty( $_GET['action'] ) && $_GET['action'] == 'updatetown' ) {
 
     $have_town = true;
     $intown = $_GET['town_ddl'];
-} 
+}
 if ( 'GET' == $_SERVER['REQUEST_METHOD'] && !empty( $_GET['action'] ) && $_GET['action'] == 'updatevotes' ) {
     $have_town = false;
     $updated = $_GET;
@@ -25,16 +25,16 @@ if ( 'GET' == $_SERVER['REQUEST_METHOD'] && !empty( $_GET['action'] ) && $_GET['
  	foreach($ids_to_update as $toupid){
  		if ($votes_to_update[$i] != "" && $reporteds_to_update[$i] == 'true') {
  			$updatequery = 'UPDATE '.$table." SET `votes` = ".$votes_to_update[$i].", `reported` = 1 WHERE `electionrecordid` = ".$toupid.';';
-			$updateresults = $wpdb->get_results($updatequery); 
+			$updateresults = $wpdb->get_results($updatequery);
  		} else {
  		}
  		$i = $i + 1;
  	}
 
  	/*if ($updatequery) {
- 		$updateresults = $wpdb->get_results($updatequery); 
+ 		$updateresults = $wpdb->get_results($updatequery);
  	}*/
- 	
+
 }
 
 get_header(); ?>
@@ -54,7 +54,7 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
 		<?php endwhile; // end of the loop. ?>
 			<?php //if ($have_town) { echo "<p>have town = ".$intown."</p>"; }
-			      if ($updated) {echo "<p>updated.".$updated."</p>"; 
+			      if ($updated) {echo "<p>updated.".$updated."</p>";
 			       //echo"Updated:<pre>";var_dump($updated);echo"</pre>";
 			       //echo"Reported:<pre>";var_dump($reporteds_to_update);echo"</pre>";
 			      //echo"sql:<pre>";var_dump($updatequery);echo"</pre>";
@@ -62,7 +62,7 @@ get_header(); ?>
 
 			  	  } ?>
 			<form method="get" id="town_form" action="<?php the_permalink(); ?>">
-				<?php /* 
+				<?php /*
 					<select name="town_ddl" class="amw" >
 					<option value="">Select Town</option>
 					<option value="Amherst">Amherst</option>
@@ -99,11 +99,11 @@ get_header(); ?>
 					<option value="Trenton">Trenton</option>
 					<option value="Verona Island">Verona Island</option>
 					<option value="Waltham">Waltham</option>
-					<option value="Winter Harbor" >Winter Harbor</option> 
+					<option value="Winter Harbor" >Winter Harbor</option>
 				</select> */ ?>
 				<?php /*build the town select from DB. */
 				$townquery = 'SELECT  distinct `town` FROM `'. $table.'` WHERE 1';
-    			$townresult = $wpdb->get_results($townquery); 
+    			$townresult = $wpdb->get_results($townquery);
     			//echo "<pre>"; var_dump($townresult); echo "</pre>";
     			if ($townresult) {
     				$ddl_out = '<select name="town_ddl" class="amw" >';
@@ -116,7 +116,7 @@ get_header(); ?>
     						$ddl_out .= "selected";
     					}
     					$ddl_out .=  ' >'.$thistown.'</option>';
-    				} 
+    				}
     				echo $ddl_out;
     			} else {
     				echo "<p>no towns</p>";
@@ -126,18 +126,18 @@ get_header(); ?>
 
 				<input name="updatetown" type="submit" id="updatetown" class="submit button" value="GO" />
 			    <input name="action" type="hidden" id="action" value="updatetown" />
-			</form>  
+			</form>
 			<form method="post" id="clearing_form" action="<?php the_permalink(); ?>" class="eai-election-inputs-clear">
 				<input name="clearform" type="submit" id="clearform" class="submit button" value="Clear" />
 				<input name="action" type="hidden" id="action" value="clearform" />
-			</form>   
+			</form>
 			<form method="get" id="voting_form" action="<?php the_permalink(); ?>" class="eai-election-inputs-form">
-				<?php /* */ 
+				<?php /* */
 					if ($intown) {
-						echo "<h3>".$intown."</h3>"; 
+						echo "<h3>".$intown."</h3>";
 						$racesquery = 'SELECT  distinct `race` FROM `'.$table.'` WHERE town="'. $intown.'" ORDER BY raceorder';
 					    //*echo '<p>RacesQuery: '.$racesquery.'</p>'; // testing
-					    $racesresults = $wpdb->get_results($racesquery); 
+					    $racesresults = $wpdb->get_results($racesquery);
 					    //echo "<pre>"; var_dump($racesresults); echo "</pre>";// testing
 					    $htmlout = "";
 					    if ($racesresults) {
@@ -145,10 +145,10 @@ get_header(); ?>
 					            //echo '<p> Race:'.$race->race.' Reg. voters:'.$race->registeredvoters.'</p>'; // testing
 					            $indracequery = 'SELECT DISTINCT electionrecordid, candidate, party, votes, town, reported FROM '.$table.' WHERE town = "'.$intown.'" AND race="'.$race->race.'"';
 					            //echo '<p>'.$indracequery.'</p>'; // testing
-					            $indraceresults = $wpdb->get_results($indracequery); 
+					            $indraceresults = $wpdb->get_results($indracequery);
 								//echo "<pre>";var_dump($indraceresults); echo "</pre>";// testing
 					            if ($indraceresults) {
-					            	
+
 					            	//$htmlout .= '<p>'.$race->race.'</p>';
 					            	$htmlout .= "<fieldset>";
 					            	$htmlout .= '<legend>'.$race->race.'.</legend>';
@@ -169,8 +169,8 @@ get_header(); ?>
 					            		}
 					            		$htmlout .= '<input type = "hidden" name="reported[]"  value="true" >';
 					            		$htmlout .= "<br>";
-					        
-				
+
+
 					                   // $htmlout .= '</br>';
 					                } /*end for individual race */
 					                $htmlout .= "</dl>";
@@ -186,9 +186,9 @@ get_header(); ?>
 				?>
 				<input name="updatevotes" type="submit" id="updatevotes" class="submit button" value="Save" />
 				<input name="action" type="hidden" id="action" value="updatevotes" />
-			</form>  
+			</form>
 
-			
+
 
 
 	</div><!-- .page-inner -->
