@@ -463,7 +463,7 @@ function electionResults_Race2($atts) {
             } else {
                 // no votes yet.
                 // $htmlreturn .= '<p class="eai-checkback">Polls close at 8 p.m. Check back then for results as they come in.</p>';
-                $htmlreturn .= '<img src="http://www.reachdowneast.com/elections2016/wp-content/themes/election2016/images/election_announcement_bar_tuesday.png">';
+                $htmlreturn .= '<img src="'.EAElections_get_checkback_img().'">';
             }
         } else {
             $htmlreturn .= "<p>No results.</p>";

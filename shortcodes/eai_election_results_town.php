@@ -116,7 +116,7 @@ function electionResults_Town ($atts) {
         $htmlreturn .= '<h6 class="eai-results-unofficial">'.$unofficial_text.'</h6>';
         $htmlreturn .="</div></div>"; // end of shortcode
         if (!$found_votes) {
-            $htmlreturn = '<img src="http://www.reachdowneast.com/elections2016/wp-content/themes/election2016/images/election_announcement_bar_tuesday.png">';
+            $htmlreturn = '<img src="'.EAElections_get_checkback_img().'">';
         } else {
            // $htmlreturn .= "<p>found votes..</p>";
         }
