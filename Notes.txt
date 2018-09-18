@@ -1,0 +1,25 @@
+Notes & Wishlist items;
+Notes
+---------------
+1.  Would be nice to have some settings.
+    -- table Name
+    -- announcement bar....
+
+
+2.  have some clear buttons --  maybe not  (might have on the input forms),
+
+3.  how to do the input form without putting it in theme...hmmmm
+
+4.
+
+WISHLIST items
+---------------
+ -- Settings SQL access (DB, username, password)  - wishlist
+
+ Frequent SQL
+ ---------------
+ // clear reported flag
+ UPDATE `votes2018` SET `reported` = b'0' WHERE 1
+
+ // column names for importing
+ raceorder,votes,reported,race,candidate,town,party,precinct

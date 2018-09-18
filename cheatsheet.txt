@@ -1,0 +1,18 @@
+electionresultsrace
+	 'race' => '',
+   'title' => "yes",
+   'charttype' => "pie",
+
+electionresultsimple
+    'race' => '',
+    'link' => '',
+    'title' => "yes",
+
+electionresultspie
+ 	   'race' => '',
+     'title' => "yes",
+     'charttype' => "pie",
+     'link' => '',
+
+electionresultstown
+  	'town' => ''

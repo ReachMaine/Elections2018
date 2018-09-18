@@ -5,7 +5,8 @@ add_shortcode('electionresultspie', 'electionResults_RaceSimplePie');
 function electionResults_RaceSimplePie ($atts) {
   /* short code function to display election results by Race.  Ex:  Governor's race */
  global $wpdb;
- $table = "votes2016";
+ $table = EAElections_get_tablename();
+
  global $eai_elections_enable_results ; // turn on/off everything
   $a = shortcode_atts( array(
      'race' => '',
@@ -15,10 +16,12 @@ function electionResults_RaceSimplePie ($atts) {
      'charttype' => "pie",
      'partial' => "no",
      'link' => '',
+     'novoteimg' => '',
  ), $atts );
 $link = $a['link'];
  $votes_preview = false;
  $htmlreturn = "<!-- Simple Pie shortcode -->";
+ $htmlreturn .= "Simple Pie with table: ".$table.".";
  $jsreturn = "";
  if ($eai_elections_enable_results) {
    // initializations
@@ -451,7 +454,7 @@ $link = $a['link'];
            } else {
                // no votes yet.
                // $htmlreturn .= '<p class="eai-checkback">Polls close at 8 p.m. Check back then for results as they come in.</p>';
-               $htmlreturn .= '<img src="http://www.reachdowneast.com/elections2016/wp-content/themes/election2016/images/election_announcement_bar_tuesday.png">';
+               $htmlreturn .= '<img src="'.EAElections_get_checkback_img().'">';
            }
        } else {
            $htmlreturn .= "<p>No results.</p>";
