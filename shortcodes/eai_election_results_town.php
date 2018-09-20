@@ -117,9 +117,7 @@ function electionResults_Town ($atts) {
         $htmlreturn .="</div></div>"; // end of shortcode
         if (!$found_votes) {
             $htmlreturn = '<img src="'.EAElections_get_checkback_img().'">';
-        } else {
-           // $htmlreturn .= "<p>found votes..</p>";
-        }
+        } 
   } // not enabled.
     return $htmlreturn;
 } /* end of electionresultstown */

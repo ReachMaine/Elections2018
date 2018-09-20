@@ -6,7 +6,8 @@ $have_town = false;
 $updated = false;
 global $wpdb;
 $table = EAElections_get_tablename();
-
+$intown = "";
+$htmlout = "";
 if ( 'GET' == $_SERVER['REQUEST_METHOD'] && !empty( $_GET['action'] ) && $_GET['action'] == 'updatetown' ) {
 
     $have_town = true;
