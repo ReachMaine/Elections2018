@@ -21,18 +21,20 @@ function eae_header_scripts(){
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <?php
 }
+// enqueue the style sheets
+function eae_enqueue_styles()
+{
+      wp_enqueue_style( 'eae_styles', plugins_url( 'eai_results.css', __FILE__ ) );
+}
 
+add_action('admin_enqueue_scripts', 'eae_enqueue_styles' );
 /* election results short codes */
-
 /* shortcode [electionresultsrace ] */
 require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_result_racebars.php');
-
 /* shortcode [electionresultspie] */
 require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_results_simplepie.php');
-
 /* shortcode [electionresultsimple ] - best for uncontested races */
 require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_results_simple.php');
-
 /* shortcode [electionresultstown ] */
 require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_results_town.php');
 

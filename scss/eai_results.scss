@@ -1,0 +1,182 @@
+// stying for the electionresults widgets....
+$republican-red : #D33;
+$democrat-blue : #1E73BE;
+$green-green: #1db60e;
+.party-R {
+	color: $republican-red;
+	font-weight: bold;
+	width: initial;
+}
+.party-D {
+	color: $democrat-blue;
+	font-weight: bold;
+	width: initial;
+}
+.party-G {
+	color: $green-green;
+	font-weight: bold;
+	width: initial;
+}
+.eai-resultsrace-wrapper {
+	border-bottom: 1px solid #333;
+	margin-bottom: 10px;
+}
+ul.eai-results-sum {
+	li {
+		list-style: none;
+	}
+}
+table.eai-results {
+	width: auto;
+	th {
+		color: #333;
+		font-size: 16px;
+		line-height: 18px;
+	}
+	td, th {
+		width: 180px;
+	}
+	tr.eai-results-headerrow {
+		border-bottom: 1px solid #333;
+	}
+	tr.eai-results-totalrow {
+		border-top: 1px solid #333;
+		border-bottom: 1px solid #333;
+	}
+}
+.eai-results-unofficial {
+	color: red;
+}
+.eai-result-votes, .eia-result-totals {
+	text-align: right;
+}
+.eia-result-totals {
+	font-weight: bold;
+	border-bottom: 1px solid grey;
+}
+// summary results
+.eai-resultsum-wrapper {
+	padding-top: 10px;
+	border-bottom: 1px solid grey;
+
+	.eai-racesummary-grx {
+		width: 450px;
+		//height: 250px;
+		float: left;
+	}
+}
+// detail race results
+.eai-resultsrace-wrapper {
+	.eai-racesum {
+		//min-height: 300px;
+		float: left;
+		width: 100%;
+		.eai-race-vote-pie {
+			float: left;
+			.eai-race-grx {
+				width: 300px;
+				//height: 200px;
+				//height: 250px;
+
+			}
+		}
+		.eai-voter-partcip {
+			float: left;
+			padding-left: 20px;
+			padding-right: 20px;
+			.eai-voter-precent {
+				text-align: center;
+				font-size: 40px;
+				margin-bottom: 0px;
+			}
+			.eai-voter-title {
+				text-align: center;
+			}
+		}
+		.vote-count {
+			float:left;
+			//height: 200px;
+			width: 25%;
+		}
+		.eai-precincts-reporting {
+			float: left;
+			padding-left: 20px;
+			padding-right: 20px;
+			.eai-precincts-title, .eai-precincts-subtitle {
+				text-align: center;
+			}
+			//border: 1px solid grey;
+			.eai-precincts-precent {
+				text-align: center;
+				font-size: 40px;
+				margin-bottom: 0px;
+			}
+		}
+		.eai-unvoted {
+			float: right;
+			.eai-voter-grx {
+				float: right;
+				width: 300px;
+				//height: 200px;
+			}
+
+		}
+
+	}
+	.eai-results-race-details {
+		border-top: 1px solid grey;
+		clear: both;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.eai-resultsimplepie-wrapper,
+	.eai-resultsimple-wrapper {
+		width: 30%;
+	}
+}
+.eai-resultsimplepie-wrapper,
+.eai-resultsimple-wrapper {
+	//width: 30%;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid grey;
+	height: 165;
+	.eai-results-sum {
+		margin-bottom: 5px;
+	}
+	p {
+		margin-bottom:  0px;
+	}
+	.eai-racesimple .eai-results-sum span {
+		width: auto!important;
+		width: initial!important;
+
+	}
+	.eai-racesimplepie {
+		.eai-precincts-reporting {
+			p {
+				text-align: center;
+			}
+		}
+	}
+	.eai-results-unofficial {
+		text-align: center;
+	}
+} // end simple wrapper
+.eai-checkback:before {
+//content: url( http://www.reachdowneast.com/elections-2014/wp-content/themes/ea-local1/images/election_graphic.jpg);
+}
+
+.eai-checkback {
+	color: #D33;
+	//font-size: 24px;
+}
+
+// election inputs ...
+.eai-election-inputs-form {
+	dd, dt {
+		display: inline-block;
+		padding: 3px;
+	}
+}
