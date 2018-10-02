@@ -1,0 +1,126 @@
+.party-R {
+  color: #D33;
+  font-weight: bold;
+  width: initial; }
+
+.party-D {
+  color: #1E73BE;
+  font-weight: bold;
+  width: initial; }
+
+.party-G {
+  color: #1db60e;
+  font-weight: bold;
+  width: initial; }
+
+.eai-resultsrace-wrapper {
+  border-bottom: 1px solid #333;
+  margin-bottom: 10px; }
+
+ul.eai-results-sum li {
+  list-style: none; }
+
+table.eai-results {
+  width: auto; }
+  table.eai-results th {
+    color: #333;
+    font-size: 16px;
+    line-height: 18px; }
+  table.eai-results td, table.eai-results th {
+    width: 180px; }
+  table.eai-results tr.eai-results-headerrow {
+    border-bottom: 1px solid #333; }
+  table.eai-results tr.eai-results-totalrow {
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333; }
+
+.eai-results-unofficial {
+  color: red; }
+
+.eai-result-votes, .eia-result-totals {
+  text-align: right; }
+
+.eia-result-totals {
+  font-weight: bold;
+  border-bottom: 1px solid grey; }
+
+.eai-resultsum-wrapper {
+  padding-top: 10px;
+  border-bottom: 1px solid grey; }
+  .eai-resultsum-wrapper .eai-racesummary-grx {
+    width: 450px;
+    float: left; }
+
+.eai-resultsrace-wrapper .eai-racesum {
+  float: left;
+  width: 100%; }
+  .eai-resultsrace-wrapper .eai-racesum .eai-race-vote-pie {
+    float: left; }
+    .eai-resultsrace-wrapper .eai-racesum .eai-race-vote-pie .eai-race-grx {
+      width: 300px; }
+  .eai-resultsrace-wrapper .eai-racesum .eai-voter-partcip {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px; }
+    .eai-resultsrace-wrapper .eai-racesum .eai-voter-partcip .eai-voter-precent {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 0px; }
+    .eai-resultsrace-wrapper .eai-racesum .eai-voter-partcip .eai-voter-title {
+      text-align: center; }
+  .eai-resultsrace-wrapper .eai-racesum .vote-count {
+    float: left;
+    width: 25%; }
+  .eai-resultsrace-wrapper .eai-racesum .eai-precincts-reporting {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px; }
+    .eai-resultsrace-wrapper .eai-racesum .eai-precincts-reporting .eai-precincts-title, .eai-resultsrace-wrapper .eai-racesum .eai-precincts-reporting .eai-precincts-subtitle {
+      text-align: center; }
+    .eai-resultsrace-wrapper .eai-racesum .eai-precincts-reporting .eai-precincts-precent {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 0px; }
+  .eai-resultsrace-wrapper .eai-racesum .eai-unvoted {
+    float: right; }
+    .eai-resultsrace-wrapper .eai-racesum .eai-unvoted .eai-voter-grx {
+      float: right;
+      width: 300px; }
+.eai-resultsrace-wrapper .eai-results-race-details {
+  border-top: 1px solid grey;
+  clear: both; }
+
+@media only screen and (min-width: 768px) {
+  .eai-resultsimplepie-wrapper,
+  .eai-resultsimple-wrapper {
+    width: 30%; } }
+.eai-resultsimplepie-wrapper,
+.eai-resultsimple-wrapper {
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid grey;
+  height: 165; }
+  .eai-resultsimplepie-wrapper .eai-results-sum,
+  .eai-resultsimple-wrapper .eai-results-sum {
+    margin-bottom: 5px; }
+  .eai-resultsimplepie-wrapper p,
+  .eai-resultsimple-wrapper p {
+    margin-bottom: 0px; }
+  .eai-resultsimplepie-wrapper .eai-racesimple .eai-results-sum span,
+  .eai-resultsimple-wrapper .eai-racesimple .eai-results-sum span {
+    width: auto !important;
+    width: initial !important; }
+  .eai-resultsimplepie-wrapper .eai-racesimplepie .eai-precincts-reporting p,
+  .eai-resultsimple-wrapper .eai-racesimplepie .eai-precincts-reporting p {
+    text-align: center; }
+  .eai-resultsimplepie-wrapper .eai-results-unofficial,
+  .eai-resultsimple-wrapper .eai-results-unofficial {
+    text-align: center; }
+
+.eai-checkback {
+  color: #D33; }
+
+.eai-election-inputs-form dd, .eai-election-inputs-form dt {
+  display: inline-block;
+  padding: 3px; }

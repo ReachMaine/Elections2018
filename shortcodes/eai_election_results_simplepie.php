@@ -11,28 +11,34 @@ function electionResults_RaceSimplePie ($atts) {
      'race' => '',
      'unvoted' => false,  // by default, dont show the unvoted
      'primary' => false,
-     'title' => "yes",
+     'show_title' => "yes",
      'charttype' => "pie",
      'partial' => "no",
      'link' => '',
      'novoteimg' => '',
+     'title' => '',
+     'class' => '',
  ), $atts );
  $link = $a['link'];
  $votes_preview = false;
  $htmlreturn = "<!-- Simple Pie shortcode -->";
- $htmlreturn .= "Simple Pie with table: ".$table.".";
+ //$htmlreturn .= "Simple Pie with table: ".$table.".";
  $jsreturn = "";
  if (EAElections_enabled()) {
    // initializations
    $primary = $a['primary'];
    $race = $a['race'];
-   if ($a['title'] == "yes") {
+   if ($a['show_title'] == "yes") {
       $show_title = true;
    } else {
        $show_title = false;
    }
-   $charttype = $a["charttype"];
-
+   $charttype = $a['charttype'];
+   if ($a['title']) {
+     $display_title = $a['title'];
+   } else {
+     $display_title = $race;
+   }
    if ($a['unvoted'] ) {
        $show_unvoted = true;
    } else {
@@ -43,6 +49,7 @@ function electionResults_RaceSimplePie ($atts) {
    } else {
      $show_partial_text = false;
    }
+   $wrapper_class = $a['class'];
    $unofficial_text = '<h6 class="eai-results-unofficial">';
    if ($show_partial_text) {
        $unofficial_text .= "Voting from Hancock County ONLY.";
@@ -234,7 +241,7 @@ function electionResults_RaceSimplePie ($atts) {
 
        /* ********** build the display **************/
 
-       $htmlreturn .= '<div class="eai-resultsimplepie-wrapper">';
+       $htmlreturn .= '<div class="eai-resultsimplepie-wrapper '.$wrapper_class.'">';
 
        //$htmlreturn .= '<h4 class="eia-race-title" >'.$race.'</h4>';
        $htmlreturn .= "<!--open wrapper-->";
@@ -244,9 +251,9 @@ function electionResults_RaceSimplePie ($atts) {
            if ($show_title) {
                $htmlreturn .= '<h4 style="text-align: center;">';
                if ($link) {
-                 $htmlreturn .= '<a href="'.$link.'">'.$race.'</a>';
+                 $htmlreturn .= '<a href="'.$link.'">'.$display_title.'</a>';
                } else {
-                 $htmlreturn .= $race;
+                 $htmlreturn .= $display_title;
                }
                $htmlreturn .= "</h4>";
            }

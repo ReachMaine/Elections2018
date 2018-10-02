@@ -13,12 +13,12 @@ function electionResults_RaceSimple ($atts) {
         'link' => '',
         'unvoted' => false,  // by default, dont show the unvoted
         'primary' => false,
-        'title' => "yes",
+        'show_title' => "yes",
         'partial' => "no", // partial result of race (i.e. state races, dont have ALL results)
     ), $atts );
 
     $primary = $a['primary'];
-    if ($a['title'] == "yes") {
+    if ($a['show_title'] == "yes") {
        $show_title = true;
     } else {
         $show_title = false;
@@ -56,6 +56,7 @@ function electionResults_RaceSimple ($atts) {
     $pct_unreported_g = 0;
     $pct_unreported_u = 0;
     $jsreturn = "";
+    $all_towns_reported = false;
     $towns_reporting = []; // empty array.
     if (EAElections_enabled()) {
      /* get the candidates in the race */

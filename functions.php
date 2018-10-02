@@ -26,8 +26,7 @@ function eae_enqueue_styles()
 {
       wp_enqueue_style( 'eae_styles', plugins_url( 'eai_results.css', __FILE__ ) );
 }
-
-add_action('admin_enqueue_scripts', 'eae_enqueue_styles' );
+add_action('wp_enqueue_scripts', 'eae_enqueue_styles' );
 /* election results short codes */
 /* shortcode [electionresultsrace ] */
 require_once(EAE_PLUGIN_DIR.'/shortcodes/eai_election_result_racebars.php');
