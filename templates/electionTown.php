@@ -5,7 +5,7 @@ Template name: Election Test Towns
 $have_town = false;
 $updated = false;
 global $wpdb;
-$table = "votes2016";
+$table = EAElections_get_tablename();
 
 if ( 'GET' == $_SERVER['REQUEST_METHOD'] && !empty( $_GET['action'] ) && $_GET['action'] == 'updatetown' ) {
 

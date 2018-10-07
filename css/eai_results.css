@@ -121,6 +121,14 @@ table.eai-results {
 .eai-checkback {
   color: #D33; }
 
-.eai-election-inputs-form dd, .eai-election-inputs-form dt {
-  display: inline-block;
-  padding: 3px; }
+.eai-election-inputs-form fieldset {
+  border: 2px solid #797979;
+  margin-bottom: 0px; }
+  .eai-election-inputs-form fieldset dl.eai-election-inputs-list {
+    margin-bottom: 0px; }
+    .eai-election-inputs-form fieldset dl.eai-election-inputs-list dd, .eai-election-inputs-form fieldset dl.eai-election-inputs-list dt {
+      display: inline-block;
+      padding: 3px;
+      margin-bottom: 0px; }
+.eai-election-inputs-form #updatevotes {
+  margin-top: 20px; }

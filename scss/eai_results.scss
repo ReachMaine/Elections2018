@@ -175,8 +175,19 @@ table.eai-results {
 
 // election inputs ...
 .eai-election-inputs-form {
-	dd, dt {
-		display: inline-block;
-		padding: 3px;
+	fieldset {
+		border: 2px solid #797979;
+		margin-bottom: 0px;
+		dl.eai-election-inputs-list {
+			margin-bottom: 0px;
+			dd, dt {
+				display: inline-block;
+				padding: 3px;
+				margin-bottom: 0px;
+			}
+		}
+	} // fieldset
+	#updatevotes {  //save button
+		margin-top: 20px;
 	}
 }
