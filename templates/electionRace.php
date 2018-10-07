@@ -64,14 +64,6 @@ get_header(); ?>
 			</form>
 			<?php /* */
 				if ($have_race) {
-          echo "<p>sending in nothing should be pie <hr></p>";
-
-
-          //$shortcode_out = '[electionresultsimple race = "'.$inrace.'" ]';
-          //echo do_shortcode($shortcode_out);
-
-          //$shortcode_out = '[electionresultspie race = "'.$inrace.'" ]';
-          //echo do_shortcode($shortcode_out);
 
           echo "<hr>";
           $shortcode_out = '[electionresultsrace race = "'.$inrace.'" ]';
