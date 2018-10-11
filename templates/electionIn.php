@@ -135,8 +135,8 @@ get_header(); ?>
 				<?php /* */
 					if ($intown) {
 						echo "<h3>".$intown."</h3>";
-						$racesquery = 'SELECT  distinct `race` FROM `'.$table.'` WHERE town="'. $intown.'" ORDER BY raceorder';
-					    //*echo '<p>RacesQuery: '.$racesquery.'</p>'; // testing
+						$racesquery = 'SELECT  distinct `race`, `raceorder` FROM `'.$table.'` WHERE town="'. $intown.'" ORDER BY raceorder';
+					    echo '<p>RacesQuery: '.$racesquery.'</p>'; // testing
 					    $racesresults = $wpdb->get_results($racesquery);
 					    //echo "<pre>"; var_dump($racesresults); echo "</pre>";// testing
 					    $htmlout = "";

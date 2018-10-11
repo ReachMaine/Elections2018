@@ -33,7 +33,7 @@ get_header(); ?>
 
 			<form method="get" id="race_form" action="<?php the_permalink(); ?>">
 				<?php /*build the race select from DB. */
-				$racequery = 'SELECT  distinct `race` FROM `'. $table.'` WHERE 1 ORDER BY raceorder';
+				$racequery = 'SELECT  distinct `race`, raceorder FROM `'. $table.'` WHERE 1 ORDER BY raceorder';
     			$raceresult = $wpdb->get_results($racequery);
     			//echo "<pre>"; var_dump($raceresult); echo "</pre>";
     			if ($raceresult) {

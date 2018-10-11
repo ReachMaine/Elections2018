@@ -1,5 +1,5 @@
 <?php
-/*
+/*  NOT THIS ONE!
 Template name: Voting2016 Input
 */
 $have_town = false;
